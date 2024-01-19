@@ -1,6 +1,11 @@
 import boto3
 import json
 
+from langchain.llms.bedrock import Bedrock
+from langchain.prompts import PromptTemplate
+from langchain.chains import ConversationChain
+from langchain.memory import ConversationBufferMemory
+
 session = boto3.session.Session()
 
 """
@@ -43,3 +48,31 @@ def run_inference(prompt:str,
         contentType = 'application/json')
  
     return json.loads(output.get("body").read()).get('results')[0].get('outputText')
+
+"""
+    Function to run inference with models hosted in Bedrock
+"""
+def chat(
+    model:str="amazon.titan-text-express-v1", 
+    temperature:float=0.0, 
+    max_tokens:int=1000) :
+
+    kwargs = {
+        "temperature": temperature,
+        "max_tokens": max_tokens
+    }
+    llm = Bedrock(
+        model_id=model,
+        client=bedrock_runtime,
+        model_kwargs=kwargs
+    )
+    conversation = ConversationChain(
+        llm=llm, 
+        verbose=True, 
+        memory=ConversationBufferMemory()
+    )
+
+    output=conversation.predict(input="Hi there!")
+    print(output)
+    output=conversation.predict(input="What's the weather?")
+    print(output)
