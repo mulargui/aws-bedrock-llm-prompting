@@ -59,7 +59,7 @@ def chat(
 
     kwargs = {
         "temperature": temperature,
-        "max_tokens": max_tokens
+        "maxTokenCount": max_tokens
     }
     llm = Bedrock(
         model_id=model,
