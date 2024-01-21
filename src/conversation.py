@@ -14,3 +14,8 @@ print(chat.ask(prompt = "Tell me a funny joke"))
 chat.restart()
 print(chat.ask(prompt = "Which is the capital is Spain?"))
 print(chat.ask(prompt = "The population fo the US is..."))
+
+#read from the command line
+print('What is your question? \n')
+input = input()
+print('your answer: ' + input)
