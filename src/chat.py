@@ -59,8 +59,8 @@ class Chat :
             Assistant:
         """)
 
-    def chat(text:str) : 
-        return self.conversation.predict(input = text)
+    def ask(self, prompt:str) : 
+        return self.conversation.predict(input = prompt)
 
-    def restart() :
+    def restart(self) :
         self.memory.clean()
