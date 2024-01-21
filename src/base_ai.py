@@ -68,7 +68,7 @@ def chat(
     )
     conversation = ConversationChain(
         llm=llm, 
-        verbose=False, 
+        verbose=True, 
         memory=ConversationBufferMemory()
     )
 
