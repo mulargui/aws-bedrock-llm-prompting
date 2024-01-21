@@ -63,4 +63,4 @@ class Chat :
         return self.conversation.predict(input = prompt)
 
     def restart(self) :
-        self.memory.clean()
+        self.memory.clear()
