@@ -2,13 +2,13 @@ from basic_ai import *
 from chat import *
 
 print(list_models())
-print(answer(prompt = "Hi, how are you?"))
-print(answer(prompt = "Tell me a funny joke"))
-print(answer(prompt = "Which is the capital is Spain?"))
-print(answer(prompt = "The population fo the US is..."))
+print(ask(prompt = "Hi, how are you?"))
+print(ask(prompt = "Tell me a funny joke"))
+print(ask(prompt = "Which is the capital is Spain?"))
+print(ask(prompt = "The population fo the US is..."))
 
 chat = Chat()
-chat.chat(prompt = "Hi, how are you?")
-chat.chat(prompt = "Tell me a funny joke")
-chat.chat(prompt = "Which is the capital is Spain?")
-chat.chat(prompt = "The population fo the US is...")
+chat.ask(prompt = "Hi, how are you?")
+chat.ask(prompt = "Tell me a funny joke")
+chat.ask(prompt = "Which is the capital is Spain?")
+chat.ask(prompt = "The population fo the US is...")

@@ -17,7 +17,7 @@ def list_models() :
 """
 Function to run inference with models hosted in Bedrock
 """
-def answer(prompt:str, 
+def ask(prompt:str, 
     model:str="amazon.titan-text-express-v1", 
     temperature:float=0.0, 
     max_tokens:int=1000,
