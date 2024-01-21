@@ -8,7 +8,7 @@ print(ask(prompt = "Which is the capital is Spain?"))
 print(ask(prompt = "The population fo the US is..."))
 
 chat = Chat()
-chat.ask(prompt = "Hi, how are you?")
+print(chat.ask(prompt = "Hi, how are you?"))
 chat.ask(prompt = "Tell me a funny joke")
 chat.ask(prompt = "Which is the capital is Spain?")
 chat.ask(prompt = "The population fo the US is...")
