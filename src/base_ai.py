@@ -50,7 +50,7 @@ def run_inference(prompt:str,
     return json.loads(output.get("body").read()).get('results')[0].get('outputText')
 
 """
-    Function to run inference with models hosted in Bedrock
+    Function to chat with models hosted in Bedrock
 """
 def chat(
     model:str="amazon.titan-text-express-v1", 
@@ -68,7 +68,7 @@ def chat(
     )
     conversation = ConversationChain(
         llm=llm, 
-        verbose=True, 
+        verbose=False, 
         memory=ConversationBufferMemory()
     )
 
