@@ -6,7 +6,6 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 
-
 """
     Chat with models hosted in Bedrock
 """

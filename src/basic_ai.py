@@ -31,6 +31,8 @@ def run_inference(prompt:str,
             "topP": topP
         }})
 
+    session = boto3.session.Session()
+     
     bedrock_runtime = boto3.client(
         service_name="bedrock-runtime",
         region_name=session.region_name
