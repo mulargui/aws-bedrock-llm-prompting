@@ -11,6 +11,9 @@ while True:
 
     if question == 'stop' : 
         break
+    if question == 'clear' : 
+        chat.restart()
+        continue
 
     #answer from the LLM
     print('LLM: ' + chat.ask(prompt = question))
