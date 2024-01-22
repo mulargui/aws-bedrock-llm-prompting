@@ -7,7 +7,7 @@ chat = Chat(verbose=False)
 #read from the command line
 while True:
     #read from the command line
-    input = raw_input('Your question: ')
+    input = input('Your question: ')
 
     if input == 'stop' : 
         break
