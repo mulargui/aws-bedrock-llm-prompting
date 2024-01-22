@@ -1,5 +1,5 @@
-from basic_ai import *
-from chat import *
+from src.basic_ai import *
+from src.chat import *
 
 print(list_models())
 
