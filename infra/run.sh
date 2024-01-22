@@ -13,6 +13,9 @@ export DEBIAN_FRONTEND=noninteractive
 SCRIPT=$(readlink -f "$0")
 export REPOPATH=$(dirname "$SCRIPT" | sed 's/\/infra//')
 
+# add the path of the repo to python
+export PYTHONPATH="${PYTHONPATH}:${REPOPATH}"
+
 # check if the image is already built, if not build it
 if [ "$(docker images | grep base_image)" == "" ]; then
 	docker build --rm=true -t base_image $REPOPATH/docker
