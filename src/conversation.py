@@ -7,11 +7,10 @@ chat = Chat(verbose=False)
 #read from the command line
 while True:
     #read from the command line
-    input = input('Your question: ')
+    question = input('Your question (or stop to end): ')
 
-    if input == 'stop' : 
+    if question == 'stop' : 
         break
 
     #answer from the LLM
-    print(chat.ask(prompt = input))
-
+    print('LLM: ' + chat.ask(prompt = question))
