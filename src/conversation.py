@@ -7,8 +7,7 @@ chat = Chat(verbose=False)
 #read from the command line
 while True:
     #read from the command line
-    print('Your question:')
-    input = input()
+    input = input('Your question:')
     if input == 'stop' : 
         break
     #answer from the LLM
