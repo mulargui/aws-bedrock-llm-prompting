@@ -13,7 +13,7 @@ class Chat :
     def __init__(self, 
         model:str="amazon.titan-text-express-v1", 
         temperature:float=0.0, 
-        max_tokens:int=1000),
+        max_tokens:int=1000,
         verbose:bool=True) :
 
         kwargs = {
