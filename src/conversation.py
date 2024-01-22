@@ -16,6 +16,7 @@ print(chat.ask(prompt = "Which is the capital is Spain?"))
 print(chat.ask(prompt = "The population fo the US is..."))
 
 #read from the command line
-print('What is your question? \n')
+print('Your question:')
 input = input()
-print('your answer: ' + input)
+print(chat.ask(prompt = input))
+
