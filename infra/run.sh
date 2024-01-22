@@ -13,18 +13,18 @@ export DEBIAN_FRONTEND=noninteractive
 SCRIPT=$(readlink -f "$0")
 export REPOPATH=$(dirname "$SCRIPT" | sed 's/\/infra//')
 
-# add the path of the repo to python
-export PYTHONPATH="${PYTHONPATH}:${REPOPATH}"
-
 # check if the image is already built, if not build it
 if [ "$(docker images | grep base_image)" == "" ]; then
 	docker build --rm=true -t base_image $REPOPATH/docker
 fi
 
-# what to do, conversation or test
-execfile='/repo/src/conversation.py'
+# what to do, conversation(default), test or interactive
+commandline='python3 /repo/src/conversation.py'
 if [ "test" == "$1" ]; then 
-	execfile='/repo/test/test.py'
+	commandline='python3 /repo/test/test.py'
+fi
+if [ "i" == "$1" ]; then 
+	commandline='/bin/bash'
 fi
 
 # run the app
@@ -32,5 +32,5 @@ docker run -ti --rm -v $REPOPATH:/repo \
 	-w /repo/ \
 	-e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_ACCOUNT_ID \
 	-e AWS_REGION -e AWS_DEFAULT_REGION -e AWS_SESSION_TOKEN \
-	base_image python3 $execfile "$@"
+	base_image $commandline "$@"
 	#base_image /bin/bash
