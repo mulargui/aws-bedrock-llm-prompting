@@ -6,7 +6,7 @@ chat = Chat(verbose=True)
 #read from the command line
 while True:
     #read from the command line
-    question = input('Your question (or stop to end): ')
+    question = input('Your question (or stop to end or clear to restart the conversation): ')
 
     if question == 'stop' : 
         break
