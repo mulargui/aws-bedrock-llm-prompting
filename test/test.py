@@ -1,12 +1,13 @@
-from src.basic_ai import *
+from src.prompt import *
 from src.chat import *
 
-print(list_models())
+prompt = Prompt()
+print(prompt.list_models())
 
-print(ask(prompt = "Hi, how are you?"))
-print(ask(prompt = "Tell me a funny joke"))
-print(ask(prompt = "Which is the capital is Spain?"))
-print(ask(prompt = "The population of the US is..."))
+print(prompt.ask(prompt = "Hi, how are you?"))
+print(prompt.ask(prompt = "Tell me a funny joke"))
+print(prompt.ask(prompt = "Which is the capital is Spain?"))
+print(prompt.ask(prompt = "The population of the US is..."))
 
 chat = Chat()
 print(chat.ask(prompt = "Hi, how are you?"))

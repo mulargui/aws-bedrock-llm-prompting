@@ -15,16 +15,19 @@ export REPOPATH=$(dirname "$SCRIPT" | sed 's/\/infra//')
 
 # check if the image is already built, if not build it
 if [ "$(docker images | grep base_image)" == "" ]; then
-	docker build --rm=true -t base_image $REPOPATH/docker
+	docker build --rm=true -t base_image $REPOPATH/infra/docker
 fi
 
-# what to do, conversation(default), test or interactive
+# what to do: conversation(default), prompt, test or interactive
 commandline='python3 /repo/src/conversation.py'
 if [ "test" == "$1" ]; then 
 	commandline='python3 /repo/test/test.py'
 fi
 if [ "i" == "$1" ]; then 
 	commandline='/bin/bash'
+fi
+if [ "prompt" == "$1" ]; then 
+	commandline='python3 /repo/src/questions.py'
 fi
 
 # run the app

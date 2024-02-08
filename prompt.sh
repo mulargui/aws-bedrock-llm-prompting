@@ -1,0 +1,1 @@
+./infra/run.sh prompt

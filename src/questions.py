@@ -1,7 +1,7 @@
-from chat import *
+from prompt import *
 
-#create a LLM chat object
-chat = Chat(verbose=False)
+#create a LLM prompt object
+prompt = Prompt()
 
 #read from the command line
 while True:
@@ -10,9 +10,6 @@ while True:
 
     if question == 'stop' : 
         break
-    if question == 'clear' : 
-        chat.restart()
-        continue
 
     #answer from the LLM
-    print('LLM: ' + chat.ask(prompt = question))
+    print('LLM: ' + prompt.ask(prompt = question))
