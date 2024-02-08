@@ -7,7 +7,7 @@ import json
 """
 class Prompt :
     def __init__(self,
-        model:str="amazon.titan-text-express-v1")
+        model:str="amazon.titan-text-express-v1") :
 
         self.model=model
 
