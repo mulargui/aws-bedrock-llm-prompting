@@ -1,7 +1,7 @@
 from chat import *
 
 #create a LLM chat object
-chat = Chat(verbose=False)
+chat = Chat(verbose=True)
 
 #read from the command line
 while True:
