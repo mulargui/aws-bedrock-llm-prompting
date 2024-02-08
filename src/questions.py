@@ -12,4 +12,4 @@ while True:
         break
 
     #answer from the LLM
-    print('LLM: ' + prompt.ask(prompt = question))
+    print('LLM: ' + prompt.ask(question))
