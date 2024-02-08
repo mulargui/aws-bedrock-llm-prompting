@@ -21,7 +21,6 @@ class Prompt :
     Function to know the models hosted in Bedrock
     """
     def list_models(self) :
-        #return self.bedrock.list_foundation_models()['modelSummaries']
         return boto3.client(service_name="bedrock").list_foundation_models()['modelSummaries']
 
     """
