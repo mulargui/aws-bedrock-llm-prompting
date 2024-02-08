@@ -3,7 +3,7 @@ import json
 
 
 """
-    Chat with models hosted in Bedrock
+    Prompt models hosted in Bedrock
 """
 class Prompt :
     def __init__(self,
