@@ -14,8 +14,8 @@ SCRIPT=$(readlink -f "$0")
 export REPOPATH=$(dirname "$SCRIPT" | sed 's/\/infra//')
 
 # check if the image is already built, if not build it
-if [ "$(docker images | grep base_image)" == "" ]; then
-	docker build --rm=true -t base_image $REPOPATH/infra/docker
+if [ "$(docker images | grep llm-image)" == "" ]; then
+	docker build --rm=true -t llm-image $REPOPATH/infra/docker
 fi
 
 # what to do: conversation(default), prompt, test or interactive
@@ -36,4 +36,4 @@ docker run -ti --rm -v $REPOPATH:/repo \
 	-e PYTHONPATH='/repo' \
 	-e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_ACCOUNT_ID \
 	-e AWS_REGION -e AWS_DEFAULT_REGION -e AWS_SESSION_TOKEN \
-	base_image $commandline
+	llm-image $commandline
