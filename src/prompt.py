@@ -16,7 +16,6 @@ class Prompt :
             service_name="bedrock-runtime",
             region_name=session.region_name
         )
-    )
 
     """
     Function to know the models hosted in Bedrock
