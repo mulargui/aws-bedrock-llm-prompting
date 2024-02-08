@@ -1,7 +1,7 @@
 from prompt import *
 
 #create a LLM prompt object
-tmp = Prompt()
+prompt = Prompt()
 
 #read from the command line
 while True:
@@ -12,4 +12,4 @@ while True:
         break
 
     #answer from the LLM
-    print('LLM: ' + tmp.ask(prompt = question))
+    print('LLM: ' + prompt.ask(prompt = question))
