@@ -7,7 +7,7 @@ class CLIChat(Chat):
         max_tokens:int=1000,
         verbose:bool=True) :
 
-        super().__init__(model_id, temperature, max_tokens,verbose)  
+        super().__init__(model, temperature, max_tokens,verbose)  
     
     def chat() :
         #chat loop
