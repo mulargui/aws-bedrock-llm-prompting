@@ -5,9 +5,12 @@ class CLIPrompt(Prompt):
         model:str="amazon.titan-text-express-v1", 
         temperature:float=0.0, 
         max_tokens:int=1000,
-        verbose:bool=True) :
+        topP:float=1.0) :
 
-        super().__init__(model, temperature, max_tokens,verbose)  
+        super().__init__(model)  
+        self.temperature=temperature
+        self.max_tokens=max_tokens
+        self.topP=topP      
     
     def prompt(self) :
         #pormpt loop
@@ -19,4 +22,5 @@ class CLIPrompt(Prompt):
                 break
 
             #answer from the LLM
-            print('LLM: ' + self.ask(prompt = question))        
+            print('LLM: ' + self.ask(prompt = question, self.temperature, 
+                self.max_tokens, self.topP))        
