@@ -13,7 +13,7 @@ class CLIPrompt(Prompt):
         self.topP=topP      
     
     def prompt(self) :
-        #pormpt loop
+        #prompt loop
         while True:
             #read from the command line
             question = input('Your question (or stop to end): ')

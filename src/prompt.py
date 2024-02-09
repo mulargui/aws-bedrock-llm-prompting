@@ -1,7 +1,6 @@
 import boto3
 import json
 
-
 """
     Prompt models hosted in Bedrock
 """
