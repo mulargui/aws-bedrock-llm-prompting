@@ -59,9 +59,14 @@ class Chat :
 
             Assistant:
         """)
-
+    """
+    Function to run inference with models hosted in Bedrock
+    """
     def ask(self, prompt:str) : 
         return self.conversation.predict(input = prompt)
 
+    """
+    Function to clear previous conversations
+    """
     def restart(self) :
         self.memory.clear()
