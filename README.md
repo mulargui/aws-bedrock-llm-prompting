@@ -1,7 +1,7 @@
 # aws-bedrock-llm-prompting
 This repo contains a basic infrastructure to interact with AWS Bedrock LLM models. With this repo you can prompt or chat with an AWS LLM model from the command line. Prompting has no memory of past questions whereas chatting includes previous conversations and should provide richer results. This is fundational work that I will extend in the future.
 
-To use this repo you just need git (to clone this repo) and docker. In order to access AWS you need to have environment variables with your account secrets. Use something like\
+To use this repo you just need git (to clone this repo) and docker. In order to access AWS you need to have environment variables with your credentials. Look at AWS documentation for the different ways to share credentials. Use something like \
 export AWS_ACCESS_KEY_ID=1234567890\
 export AWS_SECRET_ACCESS_KEY=ABCDEFGHIJKLMN\
 export AWS_ACCOUNT_ID=1234567890\
