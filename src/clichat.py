@@ -18,8 +18,8 @@ class CLIChat(Chat):
             if question == 'stop' : 
                 break
             if question == 'clear' : 
-                restart()
+                self.restart()
                 continue
 
             #answer from the LLM
-            print('LLM: ' + ask(prompt = question))        
+            print('LLM: ' + self.ask(prompt = question))        
