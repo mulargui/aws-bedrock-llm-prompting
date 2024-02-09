@@ -9,7 +9,7 @@ class CLIChat(Chat):
 
         super().__init__(model, temperature, max_tokens,verbose)  
     
-    def chat() :
+    def chat(self) :
         #chat loop
         while True:
             #read from the command line
