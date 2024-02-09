@@ -1,15 +1,7 @@
-from prompt import *
+from cliprompt import *
 
 #create a LLM prompt object
-prompt = Prompt()
+prompt = CLIPrompt()
 
-#read from the command line
-while True:
-    #read from the command line
-    question = input('Your question (or stop to end): ')
-
-    if question == 'stop' : 
-        break
-
-    #answer from the LLM
-    print('LLM: ' + prompt.ask(prompt = question))
+#prompt using the command line
+prompt.prompt()
