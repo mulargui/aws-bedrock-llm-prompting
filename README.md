@@ -13,7 +13,8 @@ chat.sh and prompt.sh - allows you to interact with an AWS LLM from the command 
 /infra/docker/dockerfile - how to build the docker image.\
 /infra/run.sh - creates the docker image on the fly and supports four modes: chat, prompt, test and interactive (for debugging inside the docker container).\
 /src/chat.py and prompt.py - These are base classes (in python) to prompt or chat with an LLM.  These classes encapsulate all the logic to use AWS Bedrock APIs.\
-/src/conversation.py and questions.py - Adds command line support to the base classes.\
+/src/clichat.py and cliprompt.py - Extends the base classes adding command line support.\
+/src/conversation.py and questions.py - Just creates objects to start with.\
 /test/test.py - some basic tests to validate that all works!
 
 Have fun using this repo!
