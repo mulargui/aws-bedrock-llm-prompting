@@ -22,5 +22,7 @@ class CLIPrompt(Prompt):
                 break
 
             #answer from the LLM
-            print('LLM: ' + self.ask(prompt = question, self.temperature, 
-                self.max_tokens, self.topP))        
+            print('LLM: ' + self.ask(prompt = question, 
+                temperature = self.temperature, 
+                max_tokens = self.max_tokens, 
+                topP = self.topP))        
