@@ -59,6 +59,13 @@ class Chat :
 
             Assistant:
         """)
+    
+    """
+    Function to change the template
+    """
+    def change_template(self, template:str) : 
+         self.conversation.prompt = PromptTemplate.from_template(template)
+    
     """
     Function to run inference with models hosted in Bedrock
     """
