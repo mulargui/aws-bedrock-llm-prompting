@@ -14,7 +14,7 @@ print(chat.ask(prompt = "Hi, how are you?"))
 print(chat.ask(prompt = "Tell me a funny joke"))
 chat.restart()
 print(chat.ask(prompt = "Which is the capital is Spain?"))
-print(chat.ask(prompt = "The population fo the US is..."))
+print(chat.ask(prompt = "The population of the US is..."))
 
 chat.change_template("""
     Human: The following is a friendly conversation between a human and an AI.
