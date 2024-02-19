@@ -6,7 +6,7 @@
 # AWS_DEFAULT_REGION, AWS_REGION, AWS_SESSION_TOKEN
 #
 
-set +x
+set -x
 export DEBIAN_FRONTEND=noninteractive
 
 # Absolute path to this repo
@@ -19,7 +19,10 @@ if [ "$(docker images | grep llm-image)" == "" ]; then
 fi
 
 # what to do: conversation(default), prompt, test or interactive
-commandline='python3 /repo/src/conversation.py'
+commandline='python3 /repo/src/main.py chat'
+#in case of debugging we will expose in the container the debugging port 
+exposeport=''
+
 if [ "test" == "$1" ]; then 
 	commandline='python3 /repo/test/test.py'
 fi
@@ -27,10 +30,11 @@ if [ "i" == "$1" ]; then
 	commandline='/bin/bash'
 fi
 if [ "prompt" == "$1" ]; then 
-	commandline='python3 /repo/src/questions.py'
+	commandline='python3 /repo/src/main.py prompt'
 fi
 if [ "debug" == "$1" ]; then 
-	commandline='python3 /repo/src/questions.py'
+	commandline='python3 /repo/src/main.py prompt debug'
+	exposeport='-p 5678:5678'
 fi
 
 # run the app
@@ -39,5 +43,5 @@ docker run -ti --rm -v $REPOPATH:/repo \
 	-e PYTHONPATH='/repo' \
 	-e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_ACCOUNT_ID \
 	-e AWS_REGION -e AWS_DEFAULT_REGION -e AWS_SESSION_TOKEN \
-	-p 5678:5678 \
+	$exposeport \
 	llm-image $commandline
