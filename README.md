@@ -9,13 +9,14 @@ export AWS_DEFAULT_REGION=us-east-1\
 export AWS_REGION=$AWS_DEFAULT_REGION
 
 Directories and files\
-test.sh - you probably want to start here. If you can run these test in means that you have everything in place and can start using this repo\
+test.sh - you probably want to start here. If you can run these test it means that you have everything in place and can start using this repo\
 chat.sh and prompt.sh - allows you to interact with an AWS LLM from the command line.\
 /infra/docker/dockerfile - how to build the docker image.\
-/infra/run.sh - creates the docker image on the fly and supports four modes: chat, prompt, test and interactive (for debugging inside the docker container).\
+/infra/run.sh - creates the docker image on the fly and supports five modes: chat, prompt, test, debug and interactive (for inspection inside the docker container).\
 /src/chat.py and prompt.py - These are base classes (in python) to prompt or chat with an LLM.  These classes encapsulate all the logic to use AWS Bedrock APIs.\
 /src/clichat.py and cliprompt.py - Extends the base classes adding command line support.\
 /src/conversation.py and questions.py - Just creates the objects to start with.\
-/test/test.py - some basic tests to validate that all works!
+/test/test.py - some basic tests to validate that all works!\
+.vscode/launch.json configuration to attach vs code debugger to the container. Look at vs code documentation on how to install and attach the python debugger to an app
 
 Have fun using this repo!
