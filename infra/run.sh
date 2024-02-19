@@ -29,11 +29,15 @@ fi
 if [ "prompt" == "$1" ]; then 
 	commandline='python3 /repo/src/questions.py'
 fi
-
+if [ "debug" == "$1" ]; then 
+	commandline='python3 /repo/src/questions.py'
+fi
 # run the app
 docker run -ti --rm -v $REPOPATH:/repo \
 	-w /repo/ \
 	-e PYTHONPATH='/repo' \
 	-e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_ACCOUNT_ID \
 	-e AWS_REGION -e AWS_DEFAULT_REGION -e AWS_SESSION_TOKEN \
+	#add debug support
+	-p 5678:5678 \ 
 	llm-image $commandline

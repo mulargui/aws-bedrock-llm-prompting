@@ -1,4 +1,4 @@
 FROM python:3.12
 
 RUN	pip install -q --upgrade pip \
-	pip install -q --upgrade boto3 langchain
+	pip install -q --upgrade boto3 langchain debugpy
