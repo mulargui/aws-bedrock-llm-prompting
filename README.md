@@ -9,6 +9,7 @@ export AWS_DEFAULT_REGION=us-east-1\
 export AWS_REGION=$AWS_DEFAULT_REGION
 
 Directories and files\
+test.sh - you probably want to start here. If you can run these test in means that you have everything in place and can start using this repo\
 chat.sh and prompt.sh - allows you to interact with an AWS LLM from the command line.\
 /infra/docker/dockerfile - how to build the docker image.\
 /infra/run.sh - creates the docker image on the fly and supports four modes: chat, prompt, test and interactive (for debugging inside the docker container).\
