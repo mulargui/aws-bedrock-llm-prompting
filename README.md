@@ -18,6 +18,6 @@ debug.sh - a shellscript to start the app in debug mode.\
 /src/clichat.py and cliprompt.py - Extends the base classes adding command line support.\
 /src/main.py - entry point to the app, it just creates the objects to start with.\
 /test/test.py - some basic tests to validate that all works!\
-.vscode/launch.json - configuration to attach vs code debugger to the container. Look at vs code documentation on how to install and attach the python debugger to an app.
+.vscode/launch.json - configuration to attach vs code debugger to the container. Look at vs code documentation on how to install and attach the python debugger to an app. https://code.visualstudio.com/docs/editor/debugging
 
 Have fun using this repo!
