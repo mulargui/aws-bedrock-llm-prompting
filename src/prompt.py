@@ -20,7 +20,11 @@ class Prompt :
     Function to know the models hosted in Bedrock
     """
     def list_models(self) :
-        return boto3.client(service_name="bedrock").list_foundation_models()['modelSummaries']
+        #return all data of each model
+        #return boto3.client(service_name="bedrock").list_foundation_models()['modelSummaries']
+
+        #return just the name of each models
+        return [model.modelId for model in boto3.client(service_name="bedrock").list_foundation_models()['modelSummaries']]
 
     """
     Function to run inference with models hosted in Bedrock
