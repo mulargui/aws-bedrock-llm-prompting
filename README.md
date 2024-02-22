@@ -8,6 +8,8 @@ export AWS_ACCOUNT_ID=1234567890\
 export AWS_DEFAULT_REGION=us-east-1\
 export AWS_REGION=$AWS_DEFAULT_REGION
 
+At this time you need to activate access to Bedrock for your AWS account, I did it using the AWS console. You also need to request access to each model you want to use. I also did it using the AWS console. Keep in mind that the model access request is per region, so the AWS_REGION env var needs to match the region you requested access to the model. There is a list_models() method that return the list of models you have access in a region. You can see an example of use in test/test.py
+
 Directories and files\
 test.sh - you probably want to start here. If you can run this shellscript it means that you have everything in place and can start using this repo\
 chat.sh and prompt.sh - allows you to interact with an AWS LLM from the command line.\

@@ -1,14 +1,18 @@
 from src.prompt import *
 from src.chat import *
 
-prompt = Prompt()
-print(prompt.list_models())
+#list models I have access to
+for index, model in enumerate(Prompt.list_models()):
+    print(index, model)
 
+#prompt testing
+prompt = Prompt()
 print(prompt.ask(prompt = "Hi, how are you?"))
 print(prompt.ask(prompt = "Tell me a funny joke"))
 print(prompt.ask(prompt = "Which is the capital is Spain?"))
 print(prompt.ask(prompt = "The population of the US is..."))
 
+#chat testing
 chat = Chat()
 print(chat.ask(prompt = "Hi, how are you?"))
 print(chat.ask(prompt = "Tell me a funny joke"))
