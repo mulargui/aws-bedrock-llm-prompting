@@ -2,6 +2,8 @@
 
 #
 # You need to add your AWS credentials before executing this script
+# depending on the tool you use you will set some of the following 
+# ENV variables (not all needed at the same time)
 # AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_ACCOUNT_ID
 # AWS_DEFAULT_REGION, AWS_REGION, AWS_SESSION_TOKEN
 #
@@ -21,7 +23,7 @@ fi
 # what to do: conversation(default), prompt, test or interactive
 commandline='python3 /repo/src/main.py chat'
 #in case of debugging we will expose in the container the debugging port 
-exposeport=''
+debugport=''
 
 if [ "test" == "$1" ]; then 
 	commandline='python3 /repo/test/test.py'
@@ -34,7 +36,7 @@ if [ "prompt" == "$1" ]; then
 fi
 if [ "debug" == "$1" ]; then 
 	commandline='python3 /repo/src/main.py prompt debug'
-	exposeport='-p 5678:5678'
+	debugport='-p 5678:5678'
 fi
 
 # run the app
@@ -43,5 +45,5 @@ docker run -ti --rm -v $REPOPATH:/repo \
 	-e PYTHONPATH='/repo' \
 	-e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_ACCOUNT_ID \
 	-e AWS_REGION -e AWS_DEFAULT_REGION -e AWS_SESSION_TOKEN \
-	$exposeport \
+	$debugport \
 	llm-image $commandline
